@@ -1,2 +1,1 @@
-# Unitree Qmini Robot
-
+# Unitree Qmini Robot Resources
