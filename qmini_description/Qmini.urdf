@@ -2,14 +2,6 @@
   <material name="white_material">
     <color rgba="1 1 1 1"/>
   </material>
-  <mujoco>
-    <compiler meshdir="meshes" discardvisual="false"/>
-  </mujoco>
-  <link name="world"></link>
-  <joint name="floating_base_joint" type="floating">
-    <parent link="world"/>
-    <child link="base_link"/>
-  </joint>
   <link name="base_link">
     <inertial>
       <origin xyz="-0.014456 5.6E-05 -0.041502" rpy="0 0 0"/>
