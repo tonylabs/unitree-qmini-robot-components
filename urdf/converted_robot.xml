@@ -1,0 +1,86 @@
+<mujoco model="converted_robot">
+  <compiler angle="radian" meshdir="meshes/"/>
+  
+  <asset>
+    <texture name="groundplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 .2 .3" width="300" height="300" mark="cross" markrgb=".8 .8 .8"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance=".4"/>
+    <mesh name="base_link" content_type="model/stl" file="base_link.STL"/>
+    <mesh name="LL_hip_yaw" content_type="model/stl" file="LL_hip_yaw.STL"/>
+    <mesh name="LL_hip_roll" content_type="model/stl" file="LL_hip_roll.STL"/>
+    <mesh name="LL_hip_pitch" content_type="model/stl" file="LL_hip_pitch.STL"/>
+    <mesh name="LL_knee" content_type="model/stl" file="LL_knee.STL"/>
+    <mesh name="LL_ankle" content_type="model/stl" file="LL_ankle.STL"/>
+    <mesh name="RL_hip_yaw" content_type="model/stl" file="RL_hip_yaw.STL"/>
+    <mesh name="RL_hip_roll" content_type="model/stl" file="RL_hip_roll.STL"/>
+    <mesh name="RL_hip_pitch" content_type="model/stl" file="RL_hip_pitch.STL"/>
+    <mesh name="RL_knee" content_type="model/stl" file="RL_knee.STL"/>
+    <mesh name="RL_ANKLE" content_type="model/stl" file="RL_ANKLE.STL"/>
+  </asset>
+
+  <worldbody>
+    <geom name="ground" type="plane" size="10 10 0.1" rgba=".9 .9 .9 1" material="groundplane"/>
+    <light directional="false" pos="0 1 1" dir="0 -1 -1" diffuse="1 1 1"/>
+    <body name="base_link">
+      <inertial pos="-0.014456 5.6e-05 -0.041502" quat="-0.00257562 0.606157 -0.00175674 0.795339" mass="4.7754" diaginertia="0.0508682 0.04973 0.0248209"/>
+      <joint name="floating_base_joint" type="free" limited="false" actuatorfrclimited="false"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="base_link"/>
+      <geom type="mesh" rgba="1 1 1 1" mesh="base_link"/>
+      <body name="LL_hip_yaw" pos="0 0.055 0">
+        <inertial pos="0.001558 0.000796 -0.10656" quat="0.999887 0.0135308 -0.0063304 0.00138268" mass="0.73407" diaginertia="0.00109609 0.000691105 0.000543803"/>
+        <joint name="LL-joint1" pos="0 0 0" axis="0 0 1" range="-0.349 0.525" actuatorfrcrange="-20 20"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="LL_hip_yaw"/>
+        <body name="LL_hip_roll" pos="0 0.054 -0.1073">
+          <inertial pos="0.028723 -0.018625 1.5e-05" quat="0.704582 0.704582 0.0597045 0.0597045" mass="0.072409" diaginertia="0.000150731 0.000112 5.42688e-05"/>
+          <joint name="LL-joint2" pos="0 0 0" axis="1 0 0" range="-0.275 0.698" actuatorfrcrange="-60 60"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="LL_hip_roll"/>
+          <body name="LL_hip_pitch" pos="0.0165 0.028 0">
+            <inertial pos="-0.040715 0.019181 -0.04067" quat="0.652202 0.271221 0.271606 0.653683" mass="1.4071" diaginertia="0.00653101 0.00572153 0.00111546"/>
+            <joint name="LL-joint3" pos="0 0 0" axis="0 1 0" range="-0.61 1.483" actuatorfrcrange="-20 20"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="LL_hip_pitch"/>
+            <geom type="mesh" rgba="1 1 1 1" mesh="LL_hip_pitch"/>
+            <body name="LL_knee" pos="-0.081317 -0.0003 -0.081317">
+              <inertial pos="0.048081 0.002331 -0.13228" quat="0.692133 -0.102953 -0.142857 0.69996" mass="0.76749" diaginertia="0.0018563 0.00143577 0.000554927"/>
+              <joint name="LL-joint4" pos="0 0 0" axis="0 1 0" range="-1.117 1.047" actuatorfrcrange="-20 20"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="LL_knee"/>
+              <geom type="mesh" rgba="1 1 1 1" mesh="LL_knee"/>
+              <body name="LL_ankle" pos="0.053013 0.0228 -0.14565">
+                <inertial pos="0.013735 -0.006344 -0.045775" quat="0.562412 0.442553 0.553176 0.426422" mass="0.2038" diaginertia="0.000663378 0.000494908 0.000224714"/>
+                <joint name="LL-joint5" pos="0 0 0" axis="0 1 0" range="-1.396 1.221" actuatorfrcrange="-20 20"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="LL_ankle"/>
+                <geom type="mesh" rgba="1 1 1 1" mesh="LL_ankle"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="RL_hip_yaw" pos="0 -0.055 0">
+        <inertial pos="0.001558 -0.000796 -0.10656" quat="0.999887 -0.0135308 -0.0063304 -0.00138268" mass="0.73407" diaginertia="0.00109609 0.000691105 0.000543803"/>
+        <joint name="RL-joint1" pos="0 0 0" axis="0 0 1" range="-0.525 0.349" actuatorfrcrange="-20 20"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="RL_hip_yaw"/>
+        <body name="RL_hip_roll" pos="0 -0.054 -0.1073">
+          <inertial pos="0.028723 0.018625 1.5e-05" quat="0.704582 0.704582 -0.0597045 -0.0597045" mass="0.072409" diaginertia="0.000150731 0.000112 5.42688e-05"/>
+          <joint name="RL-joint2" pos="0 0 0" axis="1 0 0" range="-0.698 0.275" actuatorfrcrange="-60 60"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="RL_hip_roll"/>
+          <body name="RL_hip_pitch" pos="0.0165 -0.028 0">
+            <inertial pos="-0.040715 -0.019181 -0.04067" quat="0.653683 0.271606 0.271221 0.652202" mass="1.4071" diaginertia="0.00653101 0.00572153 0.00111546"/>
+            <joint name="RL-joint3" pos="0 0 0" axis="0 1 0" range="-0.61 1.483" actuatorfrcrange="-20 20"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="RL_hip_pitch"/>
+            <geom type="mesh" rgba="1 1 1 1" mesh="RL_hip_pitch"/>
+            <body name="RL_knee" pos="-0.081317 0.0003 -0.081317">
+              <inertial pos="0.048081 -0.002331 -0.13228" quat="0.69996 -0.142857 -0.102953 0.692133" mass="0.76749" diaginertia="0.0018563 0.00143577 0.000554927"/>
+              <joint name="RL-joint4" pos="0 0 0" axis="0 1 0" range="-1.117 1.047" actuatorfrcrange="-20 20"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="RL_knee"/>
+              <geom type="mesh" rgba="1 1 1 1" mesh="RL_knee"/>
+              <body name="RL_ANKLE" pos="0.053013 -0.0228 -0.14565">
+                <inertial pos="0.013735 0.006344 -0.045775" quat="0.426422 0.553176 0.442553 0.562412" mass="0.2038" diaginertia="0.000663378 0.000494908 0.000224714"/>
+                <joint name="RL-joint5" pos="0 0 0" axis="0 1 0" range="-1.396 1.221" actuatorfrcrange="-20 20"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="RL_ANKLE"/>
+                <geom type="mesh" rgba="1 1 1 1" mesh="RL_ANKLE"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
