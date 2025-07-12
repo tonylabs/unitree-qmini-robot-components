@@ -3,8 +3,7 @@
 ```mermaid
 flowchart TD
     subgraph "Qmini Robot"
-        Body["Base Link (躯干)"]
-        
+        Body["Base Link"]
         %% Left Leg (LL)
         LL_HipYaw["LL Hip Yaw"]
         LL_HipRoll["LL Hip Roll"]
