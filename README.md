@@ -6,10 +6,10 @@ flowchart LR
         Body["躯干"]
         HIP0["HIP YAW RIGHT"]
         HIP1["HIP YAW LEFT"]
-        HIPROLL0 <-->|"HIP ROLL RIGHT"| HIP0
-        HIPROLL1 <-->|"HIP ROLL LEFT"| HIP1
-        Body <-->|"RIGHT LEG 0"| HIPROLL0
-        Body <-->|"LEFT LEG 0"| HIPROLL1
+        Body <-->|"HIP ROLL RIGHT"| HIP0
+        Body<-->|"HIP ROLL LEFT"| HIP1
+        HIPROLL0 <-->|"RIGHT LEG 0"| HIPROLL0
+        HIPROLL1 <-->|"LEFT LEG 0"| HIPROLL1
     end
 ```
 
