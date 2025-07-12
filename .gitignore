@@ -1,3 +1,5 @@
 # macOS Finder
-
 .DS_Store
+
+# Jetbrains
+.idea/
