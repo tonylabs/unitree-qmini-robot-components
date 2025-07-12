@@ -1,15 +1,37 @@
 # Unitree Qmini Robot Resources
 
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph "Qmini Robot"
-        Body["躯干"]
-        HIP0["HIP YAW RIGHT"]
-        HIP1["HIP YAW LEFT"]
-        Body <-->|"HIP ROLL RIGHT"| HIP0
-        Body<-->|"HIP ROLL LEFT"| HIP1
-        HIPROLL0 <-->|"RIGHT LEG 0"| HIPROLL0
-        HIPROLL1 <-->|"LEFT LEG 0"| HIPROLL1
+        Body["Base Link (躯干)"]
+        
+        %% Left Leg (LL)
+        LL_HipYaw["LL Hip Yaw"]
+        LL_HipRoll["LL Hip Roll"]
+        LL_HipPitch["LL Hip Pitch"]
+        LL_Knee["LL Knee"]
+        LL_Ankle["LL Ankle"]
+        
+        %% Right Leg (RL)
+        RL_HipYaw["RL Hip Yaw"]
+        RL_HipRoll["RL Hip Roll"]
+        RL_HipPitch["RL Hip Pitch"]
+        RL_Knee["RL Knee"]
+        RL_Ankle["RL Ankle"]
+        
+        %% Left Leg Connections
+        Body --> LL_HipYaw
+        LL_HipYaw --> LL_HipRoll
+        LL_HipRoll --> LL_HipPitch
+        LL_HipPitch --> LL_Knee
+        LL_Knee --> LL_Ankle
+        
+        %% Right Leg Connections
+        Body --> RL_HipYaw
+        RL_HipYaw --> RL_HipRoll
+        RL_HipRoll --> RL_HipPitch
+        RL_HipPitch --> RL_Knee
+        RL_Knee --> RL_Ankle
     end
 ```
 
