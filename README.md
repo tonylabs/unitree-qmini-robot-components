@@ -1,5 +1,17 @@
 # Unitree Qmini Robot Resources
 
+```mermaid
+flowchart LR
+    subgraph "Qmini Robot"
+        Host["躯干"]
+        HIP0["HIP YAW RIGHT"]
+        HIP1["HIP YAW LEFT"]
+        HIPROLL0 <-->|"HIP ROLL RIGHT"| HIP0
+        HIPROLL1 <-->|"HIP ROLL LEFT"| HIP1
+        RIGHT0 <-->|"RIGHT LEG 0"| HIPROLL0
+        LEFT0 <-->|"LEFT LEG 0"| HIPROLL1
+    end
+```
 
 ### How to use the qmini_description
 
