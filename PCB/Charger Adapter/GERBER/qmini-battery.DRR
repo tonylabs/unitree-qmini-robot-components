@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: qmini-battery.PcbDoc   2025/7/29  10:40:09
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : qmini-battery-RoundHoles.TXT
+ASCII SlotHoles File : qmini-battery-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      16mil (0.406mm)                                           Round             68        PTH        6.01inch (152.55mm)
+T2      32mil (0.8mm)                                             Slot              22        PTH        5.10inch (129.62mm)
+T3      33mil (0.85mm)                                            Slot              4         PTH        3.13inch (79.55mm)
+T4      39mil (1mm)                                               Slot              3         PTH        1.18inch (30.07mm)
+T5      116mil (2.95mm)                                           Round             4         PTH        1.23inch (31.20mm)
+T6      166mil (4.22mm)                                           Round             4         PTH        3.39inch (86.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              105
+
+Total Processing Time (hh:mm:ss) : 00:00:00

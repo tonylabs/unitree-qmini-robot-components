@@ -1,0 +1,38 @@
+*************************************************************
+FileName = qmini-battery.GBR
+AutoAperture = True
+*************************************************************
+Generating : Drill Drawing
+      File : qmini-battery.GD1
+
+    Adding Layer      : Board Shape
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : qmini-battery.GG1
+
+    Adding Layer      : Board Shape
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+*************************************************************
+
