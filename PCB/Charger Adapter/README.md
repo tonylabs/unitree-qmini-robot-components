@@ -8,3 +8,7 @@
 - C1~C4: 100uF 25V 6.3 x 5.4mm
 - D1: [SMCJ45A](https://item.taobao.com/item.htm?id=608465785790)
 - M1~M4: [SMTSO-M3-1.5ET](https://item.taobao.com/item.htm?id=626464596047&skuId=4448515665378)
+
+### PCB Manufacturer
+
+- Board Thickness: 1.6mm ~ 2mm
