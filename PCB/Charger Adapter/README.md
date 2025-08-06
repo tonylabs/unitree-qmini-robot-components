@@ -11,4 +11,5 @@
 
 ### PCB Manufacturer
 
+- Board Dimensions: 8.90 cm x 4.30 cm
 - Board Thickness: 1.6mm ~ 2mm
